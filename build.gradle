@@ -1,5 +1,7 @@
 apply plugin: 'java'
 apply plugin: 'maven'
+apply plugin:'gradle'
+apply plugin:'sonarqube'
 
 group = 'com.github.jitpack'
 
