@@ -1,5 +1,8 @@
 apply plugin: 'java'
 apply plugin: 'maven'
+apply plugin: 'java-gradle-plugin'
+apply plugin: 'jacoco'
+apply plugin: 'groovy'
 
 plugins 
     id "jacoco"
@@ -13,10 +16,13 @@ targetCompatibility = 1.8
 
 repositories {
   mavenCentral()
+    def repository = project.hasProperty('qa') ? 'sonarsource-qa' : 'sonarsource'
 }
 
 dependencies {
   compile 'com.google.guava:guava:18.0'
+  compile gradleApi()
+  compile 'org.sonarsource.scanner.api:sonar-scanner-api:2.14.0.2002'
  
 }
 
