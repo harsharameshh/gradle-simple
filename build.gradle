@@ -1,6 +1,9 @@
 apply plugin: 'java'
 apply plugin: 'maven'
-apply plugin:'sonarqube'
+
+plugins {
+  id "org.sonarqube" version "2.7"
+}
 group = 'com.github.jitpack'
 
 sourceCompatibility = 1.8 // java 8
@@ -12,6 +15,7 @@ repositories {
 
 dependencies {
   compile 'com.google.guava:guava:18.0'
+ 
 }
 
 task sourcesJar(type: Jar, dependsOn: classes) {
