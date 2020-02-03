@@ -5,7 +5,7 @@ apply plugin: 'maven'
 apply plugin: 'java-gradle-plugin'
 apply plugin: 'jacoco'
 apply plugin: 'groovy'
-apply plugin: 'org.sonarqube" version "2.7'
+apply plugin: 'onarqube-gradle-plugin:2.5'
 
 
 group = 'com.github.jitpack'
@@ -16,12 +16,16 @@ targetCompatibility = 1.8
 repositories {
   mavenCentral()
     def repository = project.hasProperty('qa') ? 'sonarsource-qa' : 'sonarsource'
+   url "https://plugins.gradle.org/m2/"
 }
 
 dependencies {
   compile 'com.google.guava:guava:18.0'
   compile gradleApi()
   compile 'org.sonarsource.scanner.api:sonar-scanner-api:2.14.0.2002'
+      classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.5"
+    }
  
 }
 
