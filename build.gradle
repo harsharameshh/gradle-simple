@@ -18,7 +18,7 @@ repositories {
     def repository = project.hasProperty('qa') ? 'sonarsource-qa' : 'sonarsource'
    url "https://plugins.gradle.org/m2/"
 }
-
+buildscript {
 dependencies {
   compile 'com.google.guava:guava:18.0'
   compile gradleApi()
@@ -27,6 +27,7 @@ dependencies {
         classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.5"
     }
  
+}
 }
 
 task sourcesJar(type: Jar, dependsOn: classes) {
