@@ -1,9 +1,9 @@
 apply plugin: 'java'
 apply plugin: 'maven'
 
-plugins {
-  id "org.sonarqube" version "2.7"
-}
+plugins 
+ id "org.sonarqube" version "2.7"
+
 group = 'com.github.jitpack'
 
 sourceCompatibility = 1.8 // java 8
