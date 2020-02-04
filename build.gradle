@@ -20,7 +20,6 @@ repositories {
 }
 buildscript {
 dependencies {
-  compile 'com.google.guava:guava:18.0'
   compile gradleApi()
   compile 'org.sonarsource.scanner.api:sonar-scanner-api:2.14.0.2002'
       classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
