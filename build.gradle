@@ -23,10 +23,6 @@ task javadocJar(type: Jar, dependsOn: javadoc) {
     classifier = 'javadoc'
     from javadoc.destinationDir
 }
-plugin {
-  id "org.sonarqube" version "2.7"
-}
-
 
 artifacts {
     archives sourcesJar
